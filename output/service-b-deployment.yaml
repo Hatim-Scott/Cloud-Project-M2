@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-b
+  template:
+    metadata:
+      labels:
+        app: service-b
+    spec:
+      containers:
+      - name: service-b
+        image: mehdiammor/service-b:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DB_HOST
+          value: "local-postgres"
+        - name: DB_USER
+          value: "myuser"
+        - name: DB_NAME
+          value: "mydb"
+        - name: DB_PASSWORD
+          value: "mypassword"
+        - name: DB_PORT
+          value: "5432"
