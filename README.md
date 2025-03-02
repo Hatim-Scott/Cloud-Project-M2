@@ -47,6 +47,6 @@ minikube service service-b
 # Test the app
 
 1. Import the postman collection and environment 
-2. Copy the minikube urls into each environment variable
+2. Copy the minikube urls into the corresponding environment variable
 3. Make your tests !
 
